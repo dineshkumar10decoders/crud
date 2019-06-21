@@ -65,9 +65,27 @@ class Emp implements Circle
 					
 		    		System.out.println("enter name");
 					String name=s.next();
+					if(name.equalsIgnoreCase("rajini")) {
+						
+						throw new InvalidException("not valid");
+					          
+					}
+				
+					else {
+						System.out.println("continue your process");	
+					}
 					
 					System.out.println("enter id");
 				       int id=s.nextInt();
+				       if(id<100) {
+							
+							throw new InvalidException("not valid");
+						        
+						
+						}
+						else {
+							System.out.println("continue your process");	
+						}
 				      
 				       
 				      System.out.println("enter address");
@@ -79,7 +97,7 @@ class Emp implements Circle
 			      	  String reg="^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 			      	  if(email.matches(reg))
 			      	  {
-			      		  email=s.next();
+			      		  System.out.println("Continue your process");
 			      	  }
 			      	  else
 			      	  {
@@ -102,7 +120,6 @@ class Emp implements Circle
 				System.out.println("values added successfully");
 		}catch(Exception e) {
 			System.out.println(e);
-				System.out.println("Enter options"+"  "+"1-create"+"  "+"2-delete"+"  "+"3-viewall"+"  "+"4-update"+" "+"5-exit");
 				
 		  
 		  
@@ -238,7 +255,7 @@ class Emp implements Circle
 		 ps.executeUpdate();   
 		  
 		
-		System.out.println(" records updated");
+		System.out.println("records updated");
 		}catch(Exception e)
 		{
 			System.out.println("e");
@@ -272,41 +289,7 @@ class Emp implements Circle
 		System.out.println("successfully exit");
 		
 	}
-	public class Employee {
-		private String name;
-		private int id;
-		private String address;
-		private String email;
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public int getId() {
-			return id;
-		}
-		public void setId(int id) {
-			this.id = id;
-		}
-		public String getAddress() {
-			return address;
-		}
-		public void setAddress(String address) {
-			this.address = address;
-		}
-		public String getEmail() {
-			return email;
-		}
-		public void setEmail(String email) {
-			this.email = email;
-		}
-		@Override
-		public String toString() {
-			return "employee [name=" + name + ", id=" + id + ", address=" + address + ", email=" + email + "]";
-		}
-
-	}
+	
 
 		public static void main(String margs[])
     	  {
